@@ -25,3 +25,22 @@ docker-build:
   - docker build -t registry.gitlab.com/juvestig/actuator-sample .
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   - docker push registry.gitlab.com/juvestig/actuator-sample
+
+k8s-deploy-stagin:
+  image: google/cloud-sdk
+  stage: deploy
+  script:
+  - echo "$GOOGLE_KEY" > key.json #Google Cloud service account key from Gcloud console
+  - gcloud auth activate-service-account --key-file key.json
+  - gcloud config set compute/zone us-west1-a
+  - gcloud config set project actuator-sample
+  - gcloud config set container/use_client_certificate True
+  - gcloud container clusters get-credentials actuator-example #downloads the kubectl configuration file
+  - kubectl delete secret registry.gitlab.com
+  - kubectl create secret docker-registry registry.gitlab.com --docker-server=https://registry.gitlab.com --docker-username=juvestig --docker-password=$REGISTRY_PASSWD --docker-email=juvestig@gmail.com
+  - kubectl apply -f deployment.yml
+  environment:
+    name: staging
+    url: https://staging.example.com #Why?
+  only:
+  - master
