@@ -35,7 +35,7 @@ k8s-deploy-staging:
   - gcloud config set compute/zone us-west1-a
   - gcloud config set project actuator-sample
   - gcloud config set container/use_client_certificate True
-  - gcloud container clusters get-credentials actuator-example #downloads the kubectl configuration file
+  - gcloud container clusters get-credentials actuator-sample-205621 #downloads the kubectl configuration file
   - kubectl delete secret registry.gitlab.com
   - kubectl create secret docker-registry registry.gitlab.com --docker-server=https://registry.gitlab.com --docker-username=juvestig --docker-password=$REGISTRY_PASSWD --docker-email=juvestig@gmail.com
   - kubectl apply -f deployment.yml
