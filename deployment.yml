@@ -10,7 +10,7 @@ spec:
         app: actuator-sample
     spec:
       containers:
-      - name: actuator-sample-springboot
+      - name: actuator-sample
         image: registry.gitlab.com/juvestig/actuator-sample
         imagePullPolicy: Always
         ports:
