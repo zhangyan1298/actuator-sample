@@ -14,6 +14,6 @@ spec:
         image: registry.gitlab.com/juvestig/actuator-sample
         imagePullPolicy: Always
         ports:
-        - containers: 8080
+        - containerPort: 8080
       imagePullSecrets:
         - name: registry.gitlab.com
