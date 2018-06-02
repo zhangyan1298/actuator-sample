@@ -42,6 +42,6 @@ k8s-deploy-staging:
   - kubectl apply -f deployment.yml
   environment:
     name: staging
-    url: https://staging.example.com #Why?
+    url: http://staging.example.com #Why?
   only:
   - master
