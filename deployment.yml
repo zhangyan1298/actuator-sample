@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: actuator-test1
+  name: actuator-test
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: actuator-test1
+        app: actuator-test
     spec:
       containers:
       - name: actuator-sample
