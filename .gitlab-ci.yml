@@ -22,7 +22,7 @@ maven-build:
 docker-build:
   stage: package
   script:
-  - docker build -t registry.gitlab.com/juvestig/actuator-sample .
+  - docker build -t dockeryanxiao/actuator-sample .
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   - docker push registry.gitlab.com/juvestig/actuator-sample
 
