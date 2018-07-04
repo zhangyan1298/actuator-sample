@@ -1,4 +1,4 @@
-image: docker
+image: docker:stable
 services:
   - docker:dind
 
@@ -22,7 +22,7 @@ stages:
 #      - "target/*.jar"
 
 docker-build:
-  tages: docker
+  tage: docker
   stage: package
   script:
   - docker info
