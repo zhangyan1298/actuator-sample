@@ -3,7 +3,7 @@ services:
   - docker:dind
 
 variables:
-  DOCKER_DRIVER: overlay2
+#  DOCKER_DRIVER: overlay2
   SPRING_PROFILES_ACTIVE: gitlab-ci
 
 stages:
