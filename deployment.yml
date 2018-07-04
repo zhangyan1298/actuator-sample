@@ -11,9 +11,9 @@ spec:
     spec:
       containers:
       - name: actuator-sample
-        image: registry.gitlab.com/juvestig/actuator-sample
+        image: dockeryanxiao/actuator-sample
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-        - name: registry.gitlab.com
+     # imagePullSecrets:
+     #   - name: registry.gitlab.com
