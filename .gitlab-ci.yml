@@ -22,6 +22,7 @@ stages:
 #      - "target/*.jar"
 
 docker-build:
+  tages: docker
   stage: package
   script:
   - docker info
