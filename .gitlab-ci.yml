@@ -11,15 +11,15 @@ stages:
   - package
   - deploy
 
-maven-build:
-  image: maven:3-jdk-8
-  stage: build
-  script: 
-  - "mvn package -B"
-  - "ls -l -h target/*.jar"
-  artifacts:
-    paths:
-      - "target/*.jar"
+#maven-build:
+#  image: maven:3-jdk-8
+#  stage: build
+#  script: 
+#  - "mvn package -B"
+#  - "ls -l -h target/*.jar"
+#  artifacts:
+#    paths:
+#      - "target/*.jar"
 
 docker-build:
   stage: package
