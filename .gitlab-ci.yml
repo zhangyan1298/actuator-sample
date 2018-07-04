@@ -1,4 +1,4 @@
-image: docker:latest
+image: docker:dind
 services:
   - docker:dind
 
@@ -23,9 +23,8 @@ stages:
 
 docker-build:
   stage: package
-  image: docker:dind
   script:
-  - docker version
+  - docker info
   - docker build -t dockeryanxiao/actuator-sample .
   - docker login -u dockeryanxiao -p $CI_JOB_TOKEN hub.docker.com
   - docker push dockeryanxiao/actuator-sample
