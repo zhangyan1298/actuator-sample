@@ -42,7 +42,8 @@ k8s-deploy-staging:
     url: http://http://ingress.vicp.io #Why?
   only:
   - master
-k8s-deploy-production
+  
+k8s-deploy-production:
  tags:
  - master-shell
  stage: deploy
