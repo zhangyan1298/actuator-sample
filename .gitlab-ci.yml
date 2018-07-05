@@ -32,6 +32,8 @@ docker-build:
   - docker push dockeryanxiao/actuator-sample
 
 k8s-deploy-staging:
+  tags:
+  - master-shell
   stage: deploy
   script:
   - kubectl apply -f deployment.yml
