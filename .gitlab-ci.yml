@@ -52,5 +52,6 @@ k8s-deploy-production:
  environment:
   name: production
   url: http://http://ingress.vicp.io/root/actuator-sample
+ when: manual
  only:
  - production
