@@ -12,8 +12,6 @@ stages:
   - deploy
 
 maven-build:
-  tags:
-  - kubernetes
   image: maven:3-jdk-8
   stage: build
   script: 
