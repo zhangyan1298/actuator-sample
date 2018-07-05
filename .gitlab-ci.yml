@@ -42,3 +42,14 @@ k8s-deploy-staging:
     url: http://http://ingress.vicp.io #Why?
   only:
   - master
+k8s-deploy-production
+ tags:
+ - master-shell
+ stage: deploy
+ script:
+ - kubectl apply -f deployment.yml -n prod
+ environment:
+  name: production
+  url: http://http://ingress.vicp.io/root/actuator-sample
+ only:
+ - production
